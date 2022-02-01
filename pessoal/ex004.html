@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparação de Idades</title>
+</head>
+
+<body>
+
+    <h1>Insira 5 idades abaixo para Comparação</h1>
+
+    <div id="campos">
+        <label for="">Primeira Idade</label>
+        <input type="text" name="" id="cx1">
+
+        <label for="">Segunda Idade</label>
+        <input type="text" name="" id="cx2">
+
+        <label for="">Terceira Idade</label>
+        <input type="text" name="" id="cx3">
+
+        <label for="">Quarta Idade</label>
+        <input type="text" name="" id="cx4">
+
+        <label for="">Quinta Idade</label>
+        <input type="text" name="" id="cx5">
+
+        <div id="btn">
+            <input type="button" id="btn" value="Verificar">
+        </div>
+
+    </div>
+
+    <script>
+        var icx1 = window.document.querySelector('input#cx1')
+        var icx2 = window.document.querySelector('input#cx2')
+        var icx3 = window.document.querySelector('input#cx3')
+        var icx4 = window.document.querySelector('input#cx4')
+        var icx5 = window.document.querySelector('input#cx5')
+        var ibtn = window.document.querySelector('input#btn')
+
+        ibtn.addEventListener('click', comparar)
+
+        function comparar() {
+            var num1 = Number(icx1.value)
+            var num2 = Number(icx2.value)
+            var num3 = Number(icx3.value)
+            var num4 = Number(icx4.value)
+            var num5 = Number(icx5.value)
+
+            var array = [num1, num2, num3, num4, num5]
+
+            var cont = 0
+
+            var maior = 0
+
+            for (let cont = 0; cont < array.length; cont++) {
+
+                if (array[cont] > 18) {
+                    maior++
+                }
+
+            }
+
+            alert(`Das idades informadas, ${maior} são maiores que 18 e ${5-maior} são menores de 18 anos.`)
+
+        }
+    </script>
+
+</body>
+
+</html>

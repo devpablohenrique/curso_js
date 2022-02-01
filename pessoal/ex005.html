@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 005</title>
+
+    <style>
+        div#tela {
+            border-style: double;
+            padding: 10px;
+            width: 20%;
+        }
+        
+        div#h1 {
+            text-align: center;
+            margin: 0px;
+            padding: 0px;
+            width: 100%;
+        }
+        
+        h1 {
+            border-bottom: double;
+        }
+        
+        div#h3 {
+            text-align: center;
+            margin: 0px;
+            padding: 0px;
+            width: 100%;
+        }
+        
+        h3 {
+            border-bottom: double;
+        }
+        
+        div#box {
+            width: 100%;
+        }
+        
+        input#altura {
+            width: 75%;
+        }
+        
+        input#sexo {
+            margin-left: 9px;
+            width: 75%;
+        }
+        
+        label#cont {
+            text-align: center;
+            float: right;
+            padding-right: 20px;
+        }
+        
+        input#btn {
+            width: 100%;
+            padding: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="tela">
+        <div id="h1">
+            <h1>Insira os dados abaixo conforme solicitado!</h1>
+        </div>
+
+        <div id="h3">
+            <h3 id='h3i'>Primeira Pessoa</h3>
+        </div>
+
+
+        <div id="box">
+            <div id="box1">
+                <label for="">Altura: </label>
+                <input type="text" name="altura" id="altura">
+            </div>
+
+            <div id="box2">
+                <label for="">Sexo: </label>
+                <input type="text" name="sexo" id="sexo">
+            </div>
+
+            <div>
+                <label for="" id="cont"><strong>1/5</strong></label>
+            </div>
+
+        </div>
+
+        <div>
+            <input type="button" value="Next" id="btn">
+        </div>
+
+        <script>
+            var h3 = window.document.querySelector('h3#h3')
+            var altura = window.document.querySelector('input#altura')
+            var sexo = window.document.querySelector('input#sexo')
+            var ViewCont = window.document.querySelector('label#cont')
+            var btn = window.document.querySelector('input#btn')
+            var h3 = window.document.querySelector('h3#h3i')
+            var aArray = ['Primeira', 'Segunda', 'Terceira', 'Quarta', 'Quinta']
+            var aDados = ['', '', '', '', '']
+            var qtdF = 0
+            var qtdM = 0
+
+            var contador = 1
+            var contador2 = 0
+            var maior = 0
+            var sexMaior = ''
+
+            btn.addEventListener('click', executar)
+
+            var aPessoas
+
+            function executar() {
+                altura.value = altura.value.replace(',', '.')
+
+                if (contador == 5) {
+                    var msg = ''
+
+                    aDados[contador - 1] = [String(altura.value) + ';' + String(sexo.value)]
+
+                    if (Number(altura.value) > maior) {
+                        maior = Number(altura.value)
+
+                        if (String(sexo.value).toUpperCase() == 'F') {
+                            sexMaior = 'Feminino'
+                        } else {
+                            sexMaior = 'Masculino'
+                        }
+
+                    }
+
+                    aDados.forEach(element => {
+                        if (element[contador2].substring(element[contador2].indexOf(';') + 1).toUpperCase() == 'M') {
+                            qtdM++
+                        } else {
+                            qtdF++
+                        }
+
+                    });
+
+                    msg = `Resultado da execução: \n`
+                    msg += `Foram cadastradas ${qtdM} pessoas do sexo Masculino. \n`
+                    msg += `Foram cadastradas ${qtdF} pessoas do sexo Feminino.\n`
+                    msg += `A maior altura é de ${maior} cm e a pessoa é do sexo ${sexMaior}.`
+
+                    alert(msg)
+
+                } else {
+
+                    if (Number(altura.value) > maior) {
+                        maior = Number(altura.value)
+
+                        if (String(sexo.value).toUpperCase() == 'F') {
+                            sexMaior = 'Feminino'
+                        } else {
+                            sexMaior = 'Masculino'
+                        }
+
+                    }
+
+                    aDados[contador - 1] = [String(altura.value) + ';' + String(sexo.value)]
+
+                    h3.innerText = aArray[contador] + ' Pessoa'
+
+                    contador++
+
+                    ViewCont.innerHTML = '<strong>' + String(contador) + '/5 </strong>'
+
+                    if (contador == 5) {
+                        btn.value = 'Finalizar'
+
+                    }
+                }
+            }
+        </script>
+
+    </div>
+
+</body>
+
+</html>

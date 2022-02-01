@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 007</title>
+</head>
+
+<body>
+
+    <h1>Insira uma data</h1>
+    <h4>A data as ser inserida deve seguir o padrão DDMMAAAA</h4>
+
+    <div id="box">
+        <label for="">Data: </label>
+        <input type="text" id="data">
+        <input type="button" value="Enviar" id="send">
+    </div>
+
+    <script>
+        var data = window.document.querySelector('input#data')
+        var btn = window.document.querySelector('input#send')
+
+        btn.addEventListener('click', exec)
+
+        function exec() {
+            var aDados = ['', '', '']
+            var txt = ''
+
+            aDados[0] = data.value.substring(0, 2)
+            aDados[1] = data.value.substring(2, 4)
+            aDados[2] = data.value.substring(4, 8)
+
+
+            txt = `A data informada separadamente é, \n`
+            txt += `Dia: ${aDados[0]} \n`
+            txt += `Mes: ${aDados[1]} \n`
+            txt += `Ano: ${aDados[2]}`
+
+            alert(txt)
+
+        }
+    </script>
+
+</body>
+
+</html>

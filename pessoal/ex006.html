@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 006</title>
+</head>
+
+<body>
+
+</body>
+<div id="body">
+    <h1>Insira nomes nos campos abaixo.</h1>
+
+    <div id="cx1">
+        <label for="" id="nome1">Nome 1:</label>
+        <input type="text" name="" id="cx1">
+    </div>
+    <div id="cx2">
+        <label for="" id="nome2">Nome 2:</label>
+        <input type="text" name="" id="cx2">
+    </div>
+
+    <input type="button" value="Next" id="botao">
+
+
+</div>
+
+<script>
+    var cx1 = window.document.querySelector('input#cx1')
+    var cx2 = window.document.querySelector('input#cx2')
+    var botao = window.document.querySelector('input#botao')
+
+
+    botao.addEventListener('click', exec)
+
+
+    function exec() {
+        var nome1 = cx1.value
+        var nome2 = cx2.value
+        var nome1a = ''
+        var nome2a = ''
+
+        var i = 0
+
+
+        for (i = (nome1.length - 1); i >= 0; i--) {
+            nome1a += nome1[i]
+        }
+
+        for (i = (nome2.length - 1); i >= 0; i--) {
+            nome2a += nome2[i]
+        }
+
+        alert(nome1a + ' + ' + nome2a)
+
+    }
+</script>
+
+</html>

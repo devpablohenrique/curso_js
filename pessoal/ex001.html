@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 001</title>
+
+    <style>
+        div#caixa {
+            border-style: double;
+            margin: 10px;
+            padding: 10px;
+            height: 200px;
+            width: 500px;
+            background-color: gray;
+        }
+        
+        div#inputs {
+            border-style: double;
+            margin: 1px;
+            height: 110px;
+            background-color: chartreuse;
+        }
+        
+        div#result {
+            border-style: double;
+            margin: 1px;
+            height: 110px;
+            width: 40%;
+        }
+        
+        h1#titulo {
+            padding-bottom: 10px;
+            text-align: center;
+        }
+        
+        input {
+            width: 90%;
+            margin: 5px;
+        }
+        
+        input#calc {
+            margin: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="caixa">
+        <h1 id="titulo">Calculando média entre <strong>valores!</strong> </h1>
+
+        <div id="inputs">
+            <input type="text" name="" id="nota1">
+            <input type="text" name="" id="nota2">
+            <input type="button" value="Calcular Média" id="calc">
+        </div>
+    </div>
+
+    <script>
+        var cx1 = window.document.querySelector('input#nota1')
+        var cx2 = window.document.querySelector('input#nota2')
+        var btn = window.document.querySelector('input#calc')
+
+        btn.addEventListener('click', calcMedia)
+
+        function calcMedia() {
+            var n1 = Number(cx1.value)
+            var n2 = Number(cx2.value)
+
+            var media = (n1 + n2) / 2
+
+            window.alert(`A média entre os valores ${n1} e ${n2} é igual a ${media}`)
+        }
+    </script>
+</body>
+
+</html>

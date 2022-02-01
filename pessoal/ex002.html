@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadrado de números</title>
+
+    <style>
+        div#caixa {
+            border: chartreuse double;
+            padding: 10px;
+            background-color: darkblue;
+            color: pink;
+            font: normal 12px Arial;
+            width: 450px;
+        }
+        
+        div#caixa1 {
+            width: 400px;
+            padding: 20px;
+            border: yellow double;
+        }
+        
+        input#box1 {
+            width: 100%;
+        }
+        
+        div#caixa2 {
+            width: 400px;
+            padding: 20px;
+            border: yellow double;
+        }
+        
+        input#box2 {
+            width: 100%;
+        }
+        
+        div#caixa3 {
+            width: 400px;
+            padding: 20px;
+            border: yellow double;
+        }
+        
+        input#box3 {
+            width: 100%;
+        }
+        
+        div#caixa4 {
+            width: 400px;
+            padding: 20px;
+            border: yellow double;
+        }
+        
+        input#box4 {
+            width: 100%;
+        }
+        
+        div#caixa5 {
+            width: 400px;
+            padding: 20px;
+            border: yellow double;
+        }
+        
+        input#box5 {
+            width: 100%;
+        }
+        
+        input#calc {
+            padding: 10px;
+            margin: 10px;
+            margin-left: 70px;
+            width: 300px;
+            color: rgb(154, 230, 49);
+            background-color: indigo;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Insira 5 numeros nas caixas abaixo para calcularmos o quadrado de cada</h1>
+    <div id="caixa">
+
+        <div id="caixa1">
+            <label for="">Primeiro numero: </label>
+            <input type="text" name="" id="box1">
+        </div>
+
+        <div id="caixa2">
+            <label for="">Segundo numero: </label>
+            <input type="text" name="" id="box2">
+        </div>
+
+        <div id="caixa3">
+            <label for="">Terceiro numero: </label>
+            <input type="text" name="" id="box3">
+        </div>
+
+        <div id="caixa4">
+            <label for="">Quarto numero: </label>
+            <input type="text" name="" id="box4">
+        </div>
+
+        <div id="caixa5">
+            <label for="">Quinto numero: </label>
+            <input type="text" name="" id="box5">
+        </div>
+
+        <input type="button" value="Calcular" id="calc">
+    </div>
+
+    <script>
+        var box1 = window.document.querySelector('input#box1')
+        var box2 = window.document.querySelector('input#box2')
+        var box3 = window.document.querySelector('input#box3')
+        var box4 = window.document.querySelector('input#box4')
+        var box5 = window.document.querySelector('input#box5')
+        var btn = window.document.querySelector('input#calc')
+
+
+
+        btn.addEventListener('click', calcular)
+
+        function calcular() {
+            var n1 = Number(box1.value)
+            var n2 = Number(box2.value)
+            var n3 = Number(box3.value)
+            var n4 = Number(box4.value)
+            var n5 = Number(box5.value)
+
+
+            var quad1 = n1 * n1
+            var quad2 = n2 * n2
+            var quad3 = n3 * n3
+            var quad4 = n4 * n4
+            var quad5 = n5 * n5
+
+            alert(`O quadrado entre os numeros informados são \n 
+            Número: ${n1} é ${quad1} \n
+            Número: ${n2} é ${quad2} \n
+            Número: ${n3} é ${quad3} \n
+            Número: ${n4} é ${quad4} \n
+            Número: ${n5} é ${quad5}`)
+
+
+
+
+        }
+    </script>
+
+</body>
+
+
+</html>
